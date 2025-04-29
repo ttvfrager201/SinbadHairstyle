@@ -719,6 +719,39 @@
     75% { transform: translate(2px, 2px); }
     100% { transform: translate(-2px, -2px); }
 }
+          html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #1a1a1a;
+      --secondary: #d4af37;
+      --light: #f5f5f5;
+      --dark: #121212;
+    }
+
+    /* Shaky Button Animation */
+    .shaky-button {
+      padding: 20px 50px;
+      border-radius: 50px;
+      font-size: 20px;
+      animation: shake 1s infinite alternate;
+      background-color: var(--secondary);
+      color: var(--dark);
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline-block;
+      text-decoration: none;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(2px, -2px); }
+      50% { transform: translate(-2px, 2px); }
+      75% { transform: translate(2px, 2px); }
+      100% { transform: translate(-2px, -2px); }
+    }
     </style>
 </head>
 <body>
@@ -953,26 +986,29 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+     <section class="contact" id="contact">
     <div class="container">
-        <div class="section-header">
-            <h2>Book an Appointment</h2>
+      <div class="section-header">
+        <h2>Book an Appointment</h2>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 6536 Schaefer Rd, Dearborn, MI 48126</p>
+          <p><i class="fas fa-phone"></i> (313) 982-4697</p>
+          <p><i class="fas fa-envelope"></i> info@sinbadhair.com</p>
+          <p>Walk-ins are welcome, but appointments are recommended for guaranteed service.</p>
+          <p>For fastest service, call us directly at <a href="tel:3139824697">(313) 982-4697</a></p>
         </div>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 6536 Schaefer Rd, Dearborn, MI 48126</p>
-                <p><i class="fas fa-phone"></i> (313) 982-4697</p>
-                <p><i class="fas fa-envelope"></i> info@sinbadhair.com</p>
-                <p>Walk-ins are welcome, but appointments are recommended for guaranteed service.</p>
-                <p>For fastest service, call us directly at <a href="tel:3139824697">(313) 982-4697</a></p>
-            </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="tel:3139824697" class="btn shaky-button">BOOK NOW</a>
+        <div style="margin-top: 20px;">
+          <a href="tel:3139824697" class="btn shaky-button">RESERVE SPOT</a>
         </div>
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="tel:3139824697" class="btn shaky-button">BOOK NOW</a>
-        </div>
+      </div>
     </div>
-</section>
+  </section>
 
 <!-- Footer -->
 <footer>
