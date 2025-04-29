@@ -697,6 +697,28 @@
                 text-align: left;
             }
         }
+        /* Shaky Button Animation */
+.shaky-button {
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    animation: shake 1s infinite alternate;
+    background-color: var(--secondary);
+    color: var(--dark);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(2px, -2px); }
+    50% { transform: translate(-2px, 2px); }
+    75% { transform: translate(2px, 2px); }
+    100% { transform: translate(-2px, -2px); }
+}
     </style>
 </head>
 <body>
@@ -968,32 +990,6 @@
         </div>
     </div>
 </footer>
-
-<style>
-/* Shaky Button Animation */
-.shaky-button {
-    padding: 20px 50px;
-    border-radius: 50px;
-    font-size: 20px;
-    animation: shake 1s infinite alternate;
-    background-color: var(--secondary);
-    color: var(--dark);
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-    text-decoration: none;
-    transition: transform 0.2s ease-in-out;
-}
-
-@keyframes shake {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(2px, -2px); }
-    50% { transform: translate(-2px, 2px); }
-    75% { transform: translate(2px, 2px); }
-    100% { transform: translate(-2px, -2px); }
-}
-</style>
-
 <!-- Scroll Reveal Animations -->
 <script>
 window.addEventListener('load', () => {
