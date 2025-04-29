@@ -941,4 +941,117 @@
                     <h3>Contact Information</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 6536 Schaefer Rd, Dearborn, MI 48126</p>
                     <p><i class="fas fa-phone"></i> (313) 982-4697</p>
-                    <p><i class="fas fa-envelope
+                    <p><i class="fas fa-envelope"></i> info@sinbadhair.com</p>
+                    <p>Walk-ins are welcome, but appointments are recommended for guaranteed service.</p>
+                    <p>For fastest service, call us directly at <a href="tel:3139824697">(313) 982-4697</a></p>
+                    <a href="tel:3139824697" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-yelp"></i></a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Sinbad Hair Style. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for animations and interactivity -->
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Reveal animations on scroll
+        const revealElements = document.querySelectorAll('.slide-up');
+        
+        function revealOnScroll() {
+            for (let i = 0; i < revealElements.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = revealElements[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    revealElements[i].classList.add('fade-in');
+                }
+            }
+        }
+        
+        window.addEventListener('scroll', revealOnScroll);
+        
+        // Add animation class to sections
+        document.querySelectorAll('.section-header, .service-card, .about-text p, .gallery-item, .testimonial-slide, .location-info, .contact-info').forEach(element => {
+            element.classList.add('slide-up');
+        });
+        
+        // Initialize animations on page load
+        window.addEventListener('load', () => {
+            revealOnScroll();
+            
+            // Testimonial slider functionality
+            const testimonialBullets = document.querySelectorAll('.testimonial-bullet');
+            let currentTestimonial = 0;
+            
+            testimonialBullets.forEach((bullet, index) => {
+                bullet.addEventListener('click', () => {
+                    // Update bullets
+                    testimonialBullets.forEach(b => b.classList.remove('active'));
+                    bullet.classList.add('active');
+                    
+                    // Update testimonial content
+                    currentTestimonial = index;
+                    // Additional code would go here if there were multiple testimonials to switch between
+                });
+            });
+        });
+    </script>
+</body>
+</html>
