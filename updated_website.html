@@ -932,13 +932,86 @@
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Book an Appointment</h2>
+    <div class="container">
+        <div class="section-header">
+            <h2>Book an Appointment</h2>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 6536 Schaefer Rd, Dearborn, MI 48126</p>
+                <p><i class="fas fa-phone"></i> (313) 982-4697</p>
+                <p><i class="fas fa-envelope"></i> info@sinbadhair.com</p>
+                <p>Walk-ins are welcome, but appointments are recommended for guaranteed service.</p>
+                <p>For fastest service, call us directly at <a href="tel:3139824697">(313) 982-4697</a></p>
             </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 6536 Schaefer Rd, Dearborn, MI 48126</p>
-                    <p><i class="fas fa-phone"></i> (313) 982-4697</p>
-                    <p><i class="fas fa-envelope
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="tel:3139824697" class="btn shaky-button">BOOK NOW</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://yelp.com" target="_blank"><i class="fab fa-yelp"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Sinbad Hair Style. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+/* Shaky Button Animation */
+.shaky-button {
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    animation: shake 1s infinite alternate;
+    background-color: var(--secondary);
+    color: var(--dark);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(2px, -2px); }
+    50% { transform: translate(-2px, 2px); }
+    75% { transform: translate(2px, 2px); }
+    100% { transform: translate(-2px, -2px); }
+}
+</style>
+
+<!-- Scroll Reveal Animations -->
+<script>
+window.addEventListener('load', () => {
+    const revealElements = document.querySelectorAll('.section-header, .service-card, .about-text p, .gallery-item, .testimonial-slide, .location-info, .contact-info');
+    const windowHeight = window.innerHeight;
+
+    function revealOnScroll() {
+        revealElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 150) {
+                el.classList.add('fade-in');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+});
+</script>
+</body>
+</html>
